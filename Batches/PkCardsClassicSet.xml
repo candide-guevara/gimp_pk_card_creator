@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cards xmlns="coquimon">
+<pokemons number="8">
+
+	<keykiss-lv37 name="Keykiss" id="#991LV37" index="212">
+		<headerinfo name="Keykiss" type="water" evolution="Basic Pokémon" hp="80"/>
+		<action1 name="Come and Play" type="pkpower" damage="" wecost="" colecost="" coletype=""><![CDATA[Always looking for a new playmate, Keykiss invites any pokemon to play. Throw a coin, if heads your opponent is confused, else, Keykiss gets confused.]]></action1>
+		<action2 name="Bite" type="attack" damage="40" wecost="1" colecost="2" coletype="fire"><![CDATA[With big razor sharp fangs, a very harmful bite. Remove one <fire/> to use this technique.]]></action2>
+		<footerinfo weakness="psy" resistance="fire" retreatcost="3"/>
+		<description><![CDATA[When he is not playing with his dog friends, he is surely up to some serious mischief. LV 37 #991]]></description>
+	</keykiss-lv37>
+
+	<mrrufo-lv84 name="Mr Rufo" id="#992LV84" index="213">
+		<headerinfo name="Mr Rufo" type="fire" evolution="Legendary Pokémon" hp="70"/>
+		<action1 name="Take a Nap" type="pkpower" damage="" wecost="" colecost="" coletype=""><![CDATA[Mr Rufo is very old, he falls asleep very easily. At the beginning of your turn remove two damage counters and put him to sleep (you can still throw a coin to see if he can attack).]]></action1>
+		<action2 name="Calm Attitude" type="attack" damage="30?" wecost="0" colecost="2" coletype="leaf"><![CDATA[Throw two coins. If you got full heads, the defending pokemon is now confused and gets three damage counters. In all other scenarios nothing happens.]]></action2>
+		<footerinfo weakness="punch" resistance="leaf" retreatcost="4"/>
+		<description><![CDATA[Loves spending his days sleeping in a cool spot and eating some tasty snacks. LV 84 #992]]></description>
+	</mrrufo-lv84>
+
+	<youngrufo-lv91 name="Young Rufo" id="#992LV91" index="214">
+		<headerinfo name="Young Rufo" type="fire" evolution="Legendary Pokémon" hp="70"/>
+		<action1 name="Do a Barrel Roll" type="pkpower" damage="" wecost="" colecost="" coletype=""><![CDATA[Quite agile on his foot Rufo's very hard to catch. Discard all energy cards attached to him and avoid the next attack.]]></action1>
+		<action2 name="Heavy Paw" type="attack" damage="30" wecost="1" colecost="2" coletype="fire"><![CDATA[Rufo quickly jumps behind his opponent and strikes.]]></action2>
+		<footerinfo weakness="punch" resistance="leaf" retreatcost="4"/>
+		<description><![CDATA[Probably the most noble of all Pokémons. Even his opponents dare not attack him. LV 91 #992]]></description>
+	</youngrufo-lv91>
+
+	<pepes-lv34 name="Pepe's" id="#993LV14" index="215">
+		<headerinfo name="Pepe's" type="fire" evolution="Baby Pokémon" hp="40"/>
+		<action1 name="Cute Dog Face" type="pkpower" damage="" wecost="" colecost="" coletype=""><![CDATA[Throw a coin and hide it. If heads, the enemy attack damage and other effects will get reflected to a benched pokemon he chooses. If tails, he chooses which of yours will get the damage.]]></action1>
+		<action2 name="Bark" type="attack" damage="20" wecost="2" colecost="1" coletype="electric"><![CDATA[A legendary bark that makes burglars run in terror. Throw a coin, if heads the defending pokemon is now paralysed, else nothing happens, not even damage.]]></action2>
+		<footerinfo weakness="water" resistance="" retreatcost="1"/>
+		<description><![CDATA[Excellent at safekeeping his masters house. Always on alert. Can sniff an intruder even if it is a mile away. LV 14 #993]]></description>
+	</pepes-lv34>
+
+	<akira-lv28 name="Akira" id="#994LV28" index="216">
+		<headerinfo name="Akira" type="white" evolution="Basic Pokémon" hp="50"/>
+		<action1 name="Chicken Out" type="pkpower" damage="" wecost="" colecost="" coletype=""><![CDATA[Akira's not a very adventure loving pokemon. Throw a coin and hide it, if heads the next enemy attack damage and other effects will be received by the benched pokemon of your choice.]]></action1>
+		<action2 name="Loyalty" type="pkpower" damage="" wecost="" colecost="" coletype=""><![CDATA[Always by its master side. If Akira's in your hand when you loose your last pokemon, she can enter the battleground.]]></action2>
+		<footerinfo weakness="" resistance="fire" retreatcost="1"/>
+		<description><![CDATA[Never wanders far off her master. This calm and graceful pokemon will keep him company even in his sleep. LV 28 #994]]></description>
+	</akira-lv28>
+
+	<tora-lv39 name="Tora" id="#995LV39" index="217">
+		<headerinfo name="Tora" type="electric" evolution="Basic Pokémon" hp="60"/>
+		<action1 name="Stealth" type="pkpower" damage="" wecost="" colecost="" coletype=""><![CDATA[As any fine hunter Tora knows how to stay undetected. Throw a coin, if heads the defending pokemon cannot attack you but neither can you. Else, there are no effects.]]></action1>
+		<action2 name="Final Blow" type="attack" damage="10" wecost="0" colecost="3" coletype="electric"><![CDATA[Throw three coins. If you get full heads the defending pokemon is now KO. Else the amount of damage counters inflicted equals the number of heads but Tora gets the number of tails.]]></action2>
+		<footerinfo weakness="" resistance="fire" retreatcost="1"/>
+		<description><![CDATA[A solitude loving pokemon that is always looking for something to chew. Her teeth can crush big peebles. LV 39 #995]]></description>
+	</tora-lv39>
+
+	<nacho-lv11 name="Nacho" id="#997LV11" index="218">
+		<headerinfo name="Nacho" type="punch" evolution="Baby Pokémon" hp="30"/>
+		<action1 name="Spring" type="attack" damage="10" wecost="0" colecost="1" coletype="punch"><![CDATA[Because of his young age Nacho is quite light.]]></action1>
+		<footerinfo weakness="" resistance="punch" retreatcost="1"/>
+		<description><![CDATA[Nacho has the potential to become the king of the meadow when he grows up. LV 11 #997]]></description>
+	</nacho-lv11>
+
+	<rosita-lv41 name="Rosita" id="#996LV41" index="219">
+		<headerinfo name="Rosita" type="leaf" evolution="Basic Pokémon" hp="90"/>
+		<action1 name="Whole Milk" type="attack" damage="10+" wecost="0" colecost="2" coletype="leaf"><![CDATA[Full of vitamins. Remove one damage counter of any of the benched pokémon of your choice.]]></action1>
+		<action2 name="Ram it Down" type="attack" damage="10" wecost="2" colecost="0" coletype="leaf"><![CDATA[When needed Rosita can be quite fast and runs into his opponent.]]></action2>
+		<footerinfo weakness="punch" resistance="water" retreatcost="3"/>
+		<description><![CDATA[Rosita is well know by cheesemakers because of her prime quality milk. LV 41 #996]]></description>
+	</rosita-lv41>
+
+</pokemons>
+
+<trainers number="1">
+
+	<marrobones id="#marrobones" name="Marrobones">
+		<headerinfo/>
+		<description><![CDATA[Mr Rufo's favourite snacks. Remove 1 damage counter from your active Pokémon. Throw a coin, if heads remove another one. Go on until you hit tails !]]></description>
+		<fulldescription><![CDATA[]]></fulldescription>
+	</marrobones>
+
+</trainers>
+
+<energies number="11">
+
+	<doublecolorlessenergy id="#doublecolorlessenergy" name="Double Colorless Energy" type="special">
+		<headerinfo type="doublewhite"/>
+		<description><![CDATA[Provides <white/> <white/> energy. Doesn't count as a basic Energy card.]]></description>
+	</doublecolorlessenergy>
+
+	<electric id="#electric" name="Electric" type="normal">
+		<headerinfo type="electric"/>
+		<description><![CDATA[Provides <elect/> energy.]]></description>
+	</electric>
+
+	<fire id="#fire" name="Fire" type="normal">
+		<headerinfo type="fire"/>
+		<description><![CDATA[Provides <fire/> energy.]]></description>
+	</fire>
+
+	<fullhealenergy id="#fullhealenergy" name="Full Heal Energy" type="special">
+		<headerinfo type="fullheal"/>
+		<description><![CDATA[If you play this card from your hand, the Pokémon you attach it to is no longer Asleep, Confused, Paralyzed, or Poisoned. Full Heal Energy provides <white/> Energy. (Doesn't count as a basic Energy card.)]]></description>
+	</fullhealenergy>
+
+	<leaf id="#leaf" name="Leaf" type="normal">
+		<headerinfo type="leaf"/>
+		<description><![CDATA[Provides <leaf/> energy.]]></description>
+	</leaf>
+
+	<potionenergy id="#potionenergy" name="Potion Energy" type="special">
+		<headerinfo type="potion"/>
+		<description><![CDATA[If you play this card from your hand, remove 1 damage counter from the Pokémon you attach it to, if it has any. Potion Energy provides <white/> energy. (Doesn't count as a basic Energy card.)]]></description>
+	</potionenergy>
+
+	<psychic id="#psychic" name="Psychic" type="normal">
+		<headerinfo type="psy"/>
+		<description><![CDATA[Provides <psy/> energy.]]></description>
+	</psychic>
+
+	<punch id="#punch" name="Punch" type="normal">
+		<headerinfo type="punch"/>
+		<description><![CDATA[Provides <punch/> energy.]]></description>
+	</punch>
+
+	<rainbowenergy id="#rainbowenergy" name="Rainbow Energy" type="special">
+		<headerinfo type="rainbow"/>
+		<description><![CDATA[Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy counts as every type of basic Energy but only provides 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) When you attach this card from your hand to 1 of your Pokémon, it does 10 damage to that Pokémon. (Don't apply Weakness and Resistance.)]]></description>
+	</rainbowenergy>
+
+	<water id="#water" name="Water" type="normal">
+		<headerinfo type="water"/>
+		<description><![CDATA[Provides <water/> energy.]]></description>
+	</water>
+
+	<white id="#white" name="White" type="normal">
+		<headerinfo type="white"/>
+		<description><![CDATA[Provides <white/> energy.]]></description>
+	</white>
+
+</energies>
+
+</cards>

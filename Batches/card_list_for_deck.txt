@@ -1,0 +1,47 @@
+############## POKEMONS ##############
+
+Squirtle		2
+Warturtle		1
+Blastoise		1
+
+Bulbasaur		3
+Ivysaur			2
+Venausaur		1
+
+Seel			  2
+Dewgong			2
+
+Dratini			2
+Dragonair		2
+
+Gastly			3
+Haunter			2
+Gengar			1
+
+Abra			  3
+Kadabra			2
+
+Tangela			2
+
+Venomat			2
+Venomoth		2
+
+Rattata			1
+
+############## TRAINERS ##############
+
+Switch			      2
+SuperERemoval		  2
+DarkOakRevenge		1
+GustOfWind		    1
+FullHeal		      2
+SuperPotion		    2
+ERetrieval		    2
+POkeBall		      2
+ProfOak			      1
+
+############## ENERGIES ##############
+
+Water			15
+Leaf			15
+Psy			  15

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<batch xmlns="coquimon" group="3*2" resize="1024*768" outfolder="test">
+	<pokemons>
+		<card id="#996LV41" occurrence="1" format="png" image="rosita.jpg"/>
+		<card id="#991LV37" occurrence="3" format="png" image="keykiss2.jpg"/>
+		<card id="#992LV84" occurrence="1" format="png" image="mrrufo2.jpg"/>
+		<card id="#993LV14" occurrence="1" format="png" image="pepes.jpg"/>
+	</pokemons>
+	<trainers>
+		<card id="#marrobones" occurrence="1" format="png" image="marrobone.png"/>
+	</trainers>
+	<energies>
+		<card id="#punch" occurrence="1" format="png"/>
+    <card id="#psychic" occurrence="2" format="png"/>
+	</energies>
+</batch>
+
