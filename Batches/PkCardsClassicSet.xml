@@ -60,7 +60,7 @@
 	<rosita-lv41 name="Rosita" id="#996LV41" index="219">
 		<headerinfo name="Rosita" type="leaf" evolution="Basic Pokémon" hp="90"/>
 		<action1 name="Whole Milk" type="attack" damage="10+" wecost="0" colecost="2" coletype="leaf"><![CDATA[Full of vitamins. Remove one damage counter of any of the benched pokémon of your choice.]]></action1>
-		<action2 name="Ram it Down" type="attack" damage="10" wecost="2" colecost="0" coletype="leaf"><![CDATA[When needed Rosita can be quite fast and runs into his opponent.]]></action2>
+		<action2 name="Ram it Down" type="attack" damage="10" wecost="2" colecost="0" coletype="leaf"><![CDATA[When needed Rosita can be quite fast and runs into her opponent.]]></action2>
 		<footerinfo weakness="punch" resistance="water" retreatcost="3"/>
 		<description><![CDATA[Rosita is well know by cheesemakers because of her prime quality milk. LV 41 #996]]></description>
 	</rosita-lv41>
