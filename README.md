@@ -32,6 +32,9 @@ The project ships with 4 different plugins.
 * Python/ : the python-fu code for the plugins (sorry for the awkward file naming convention)
 * SourceImages/ : The base images used to compose the final card
 
+## Demo
+![card demo](Etc/EyeCandyDemo/mr_rufo.png)
+
 [1]: http://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game#Gameplay
 [2]: http://www.gimp.org/docs/python/index.html
 
