@@ -26,13 +26,13 @@
 		<description><![CDATA[Probably the most noble of all Pokémons. Even his opponents dare not attack him. LV 91 #992]]></description>
 	</youngrufo-lv91>
 
-	<pepes-lv34 name="Pepe's" id="#993LV14" index="215">
+	<pepes-lv14 name="Pepe's" id="#993LV14" index="215">
 		<headerinfo name="Pepe's" type="fire" evolution="Baby Pokémon" hp="40"/>
 		<action1 name="Cute Dog Face" type="pkpower" damage="" wecost="" colecost="" coletype=""><![CDATA[Throw a coin and hide it. If heads, the enemy attack damage and other effects will get reflected to a benched pokemon he chooses. If tails, he chooses which of yours will get the damage.]]></action1>
 		<action2 name="Bark" type="attack" damage="20" wecost="2" colecost="1" coletype="electric"><![CDATA[A legendary bark that makes burglars run in terror. Throw a coin, if heads the defending pokemon is now paralysed, else nothing happens, not even damage.]]></action2>
 		<footerinfo weakness="water" resistance="" retreatcost="1"/>
 		<description><![CDATA[Excellent at safekeeping his masters house. Always on alert. Can sniff an intruder even if it is a mile away. LV 14 #993]]></description>
-	</pepes-lv34>
+	</pepes-lv14>
 
 	<akira-lv28 name="Akira" id="#994LV28" index="216">
 		<headerinfo name="Akira" type="white" evolution="Basic Pokémon" hp="50"/>
@@ -50,20 +50,20 @@
 		<description><![CDATA[A solitude loving pokemon that is always looking for something to chew. Her teeth can crush big peebles. LV 39 #995]]></description>
 	</tora-lv39>
 
-	<nacho-lv11 name="Nacho" id="#997LV11" index="218">
-		<headerinfo name="Nacho" type="punch" evolution="Baby Pokémon" hp="30"/>
-		<action1 name="Spring" type="attack" damage="10" wecost="0" colecost="1" coletype="punch"><![CDATA[Because of his young age Nacho is quite light.]]></action1>
-		<footerinfo weakness="" resistance="punch" retreatcost="1"/>
-		<description><![CDATA[Nacho has the potential to become the king of the meadow when he grows up. LV 11 #997]]></description>
-	</nacho-lv11>
-
-	<rosita-lv41 name="Rosita" id="#996LV41" index="219">
+	<rosita-lv41 name="Rosita" id="#996LV41" index="218">
 		<headerinfo name="Rosita" type="leaf" evolution="Basic Pokémon" hp="90"/>
 		<action1 name="Whole Milk" type="attack" damage="10+" wecost="0" colecost="2" coletype="leaf"><![CDATA[Full of vitamins. Remove one damage counter of any of the benched pokémon of your choice.]]></action1>
 		<action2 name="Ram it Down" type="attack" damage="10" wecost="2" colecost="0" coletype="leaf"><![CDATA[When needed Rosita can be quite fast and runs into her opponent.]]></action2>
 		<footerinfo weakness="punch" resistance="water" retreatcost="3"/>
 		<description><![CDATA[Rosita is well know by cheesemakers because of her prime quality milk. LV 41 #996]]></description>
 	</rosita-lv41>
+
+  <nacho-lv11 name="Nacho" id="#997LV11" index="219">
+    <headerinfo name="Nacho" type="punch" evolution="Baby Pokémon" hp="30"/>
+    <action1 name="Spring" type="attack" damage="10" wecost="0" colecost="1" coletype="punch"><![CDATA[Because of his young age Nacho is quite light.]]></action1>
+    <footerinfo weakness="" resistance="punch" retreatcost="1"/>
+    <description><![CDATA[Nacho has the potential to become the king of the meadow when he grows up. LV 11 #997]]></description>
+  </nacho-lv11>
 
 </pokemons>
 
