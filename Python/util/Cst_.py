@@ -35,7 +35,7 @@ def findPluginDir():
 
 class Cst:
   PRJ_DIR = findPluginDir()
-  LOG_FILE = PRJ_DIR + '/poke_plugins.log'
+  LOG_FILE = os.path.join(os.environ.get('TEMP', '.'), 'poke_plugins.log')
   
   PK_IMG_DIR = PRJ_DIR + "/SourceImages/Pokemons"
   TR_IMG_DIR = PRJ_DIR + "/SourceImages/Trainers"
@@ -67,9 +67,7 @@ def checkPluginsInstalled():
     raise Exception('At least 1 of %r is missing' % check_paths)
 
 def initLog ():
-  blueFnt = '\033[94m'
-  resetFnt = '\033[0m'
-  format = '%s%%(levelname)s-%%(name)s::%%(funcName)s-> %s%%(message)s' % (blueFnt, resetFnt)
+  format = '[%(levelname)s] %(name)s::%(funcName)s  %(message)s'
   logging.basicConfig(level=logging.DEBUG, format=format, filename=Cst.LOG_FILE, filemode='a')
 
 initLog()
