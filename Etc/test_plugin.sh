@@ -4,10 +4,9 @@ Prerequisite: plugins must be installed into gimp.
   -g    Display plugin results in gimp user interface
 "
 
-REPO_ROOT=''
 source "`dirname "$0"`/common.sh" || exit 1
-TEST_BATCH='
-<?xml version="1.0" encoding="UTF-8"?>
+# '<?' has to be the first 2 chars of the file
+TEST_BATCH='<?xml version="1.0" encoding="UTF-8"?>
 <batch xmlns="coquimon" group="3*2" resize="1024*768" outfolder="test">
   <pokemons>
     <card id="#992LV84" occurrence="1" format="png" image="mrrufo2.jpg"/>
@@ -23,7 +22,7 @@ TEST_BATCH='
 
 run_plugins() {
   local test_image="$REPO_ROOT/SourceImages/test_image.png"
-  local test_batch="`mktemp`"
+  local test_batch="`mktemp -t test_batch.XXXXXX.xml`"
   echo "$TEST_BATCH" > "$test_batch"
 
   energy_render=( python-fu-energy-card RUN-NONINTERACTIVE '"fire"' )

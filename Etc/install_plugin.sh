@@ -3,8 +3,6 @@ USAGE="Installs pk render plugins into gimp plugin folder.
   -c    Clean the gimp plugins repo before installation
 "
 
-REPO_ROOT=''
-PLUGIN_DIR=''
 source "`dirname "$0"`/common.sh" || exit 1
 
 install_plugin() {
