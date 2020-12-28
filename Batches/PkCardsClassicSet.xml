@@ -75,6 +75,12 @@
     <fulldescription><![CDATA[]]></fulldescription>
   </marrobones>
 
+  <perfect_treasure id="#perfect_treasure" name="Perfect Treasure">
+    <headerinfo/>
+    <description><![CDATA[Scan your deck for any Pokémon you want. Throw a coin, if heads put the Pokémon in your hand. If tails discard teh card.]]></description>
+    <fulldescription><![CDATA[]]></fulldescription>
+  </perfect_treasure>
+
 </trainers>
 
 <energies number="11">
