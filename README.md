@@ -26,13 +26,14 @@ The project ships with 4 different plugins.
   * `Etc/test_plugin.sh` can be run to check the installation.
 * Launch Gimp, the plugins should be available under `<menu bar>/PkRender`
 * You can also run then in batch mode : `Etc/render.sh`
+  * Run `Etc/render.sh list "<pokemon>"` to search for available pokemons.
 * In case of errors, check the logs at `./poke_plugins.log`
 
 ### Running gimp on a vagrant VM
 
 * Run `cd Vagrant ; VAGRANT_HOME=vagrant.d vagrant up` to download, provision and start the VM.
   * `vagrant halt` or `vagrant destroy` to stop or clean the VM.
-
+* Run `Etc/render.sh vm single "<pokemon>" "<image>"` to render a card into the current working dir.
 
 ## Directory structure
 

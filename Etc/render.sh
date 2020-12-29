@@ -1,15 +1,19 @@
 #! /bin/bash
-USAGE='USAGE : render.sh COMMAND ARGS
+USAGE='USAGE : render.sh [--chdir DIRPATH] COMMAND ARGS
   Commands :
+  * batch XML_FILE
   * list CARD_NAME_PAT
   * single CARD_NAME [IMG_NAME]
-  * batch XML_FILE
+  * vm COMMAND ARGS
 '
 
 source "`dirname "$0"`/common.sh" || exit 1
 find_plugin_dir "$0"
+find_repo_root "$0"
 XML_DB="$PLUGIN_DIR/Batches/PkCardsClassicSet.xml"
 IMG_DB="$PLUGIN_DIR/SourceImages"
+export VAGRANT_HOME="$REPO_ROOT/Vagrant/vagrant.d"
+VM_NAME="gimp_pk_card_creator"
 declare -A CMD_LIST
 
 CMD_LIST['list']=1
@@ -80,15 +84,49 @@ batch() {
   run_gimp python-fu-batch-render RUN-NONINTERACTIVE "\"$1\""
 }
 
+CMD_LIST['vm']=1
+vm() {
+  local command="$1"
+  local ssh_conf="`mktemp`"
+  local wdir="render_wdir_`date +%s`"
+  local script_path="~/`basename "$REPO_ROOT"`/Etc/render.sh"
+
+  pushd "$REPO_ROOT/Vagrant" > /dev/null || exit 1
+  vagrant ssh-config > "$ssh_conf" \
+    || exit_with_msg "Could not configure ssh to VM (is the machine running ?)"
+  popd
+  
+  [[ "$command" == batch ]] && exit_with_msg "This command needs fix on vm"
+  run_in_vm "$ssh_conf" "$script_path" --chdir "$wdir" "$@"
+  scp -r -F "$ssh_conf" "${VM_NAME}:${wdir}" .
+}
+
+run_in_vm() {
+  local ssh_conf="$1"
+  local remote_home="/home/vagrant"
+  local remote_repo="${remote_home}/`basename "$REPO_ROOT"`"
+  shift
+  ssh -F "$ssh_conf" "$VM_NAME" -- \
+    env - HOME="$remote_home" REPO_ROOT="$remote_repo" \
+    bash -- "$@"
+}
+
 main() {
+  if [[ "$1" = --chdir ]]; then
+    [[ -d "$2" ]] || mkdir "$2"
+    pushd "$2"
+    shift 2
+  fi
   local command="$1"
   shift
   [[ -f "$XML_DB" ]] || exit_with_msg "Cannot find pk database at '$XML_DB'"
   [[ -d "$IMG_DB" ]] || exit_with_msg "Cannot find image database at '$IMG_DB'"
   if [[ -z "${CMD_LIST[$command]}" ]]; then
+    echo "Command '$command' not found"
     echo "$USAGE"
   else
     "$command" "$@" || exit_with_msg "Failed cmd '$command' $@"
+    exit 1
   fi
 }
 main "$@"
