@@ -17,7 +17,7 @@ install_plugin() {
   find "$PLUGIN_DIR" -iname '*.pyc' | xargs --no-run-if-empty rm
 }
 
-while getopts "gcith" arg; do
+while getopts "ch" arg; do
   case $arg in
     c) CLEAN_ALL=1 ;;
     *) echo "$USAGE" ; exit 1 ;;
