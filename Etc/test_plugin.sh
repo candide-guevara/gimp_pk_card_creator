@@ -7,15 +7,15 @@ Prerequisite: plugins must be installed into gimp.
 source "`dirname "$0"`/common.sh" || exit 1
 # '<?' has to be the first 2 chars of the file
 TEST_BATCH='<?xml version="1.0" encoding="UTF-8"?>
-<batch xmlns="coquimon" group="3*2" resize="1024*768" outfolder="test">
+<batch xmlns="coquimon" group="3*2" resize="1024*768">
   <pokemons>
-    <card id="#992LV84" occurrence="1" format="png" image="mrrufo2.jpg"/>
+    <card id="#992LV84" occurrence="1" image="mrrufo2.jpg"/>
   </pokemons>
   <trainers>
-    <card id="#marrobones" occurrence="1" format="png" image="marrobone.png"/>
+    <card id="#marrobones" occurrence="1" image="marrobone.png"/>
   </trainers>
   <energies>
-    <card id="#punch" occurrence="1" format="png"/>
+    <card id="#punch" occurrence="1" format="jpg"/>
   </energies>
 </batch>
 '

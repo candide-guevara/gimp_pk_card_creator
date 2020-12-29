@@ -17,7 +17,8 @@ class BatchRenderer(BatchReader):
   
   def __init__(self, batchFile):
     BatchReader.__init__(self, batchFile)
-    self.outFolder = buildBatchJobPath(os.path.dirname(self.batchFile), self.getBatchOutDir())
+    dirname,ext = os.path.splitext(os.path.basename(self.batchFile))
+    self.outFolder = mkdirAtPath(Cst.OUTPUT_DIR, dirname)
     self.pkFolder = self.outFolder + "/Pokemons"
     self.trFolder = self.outFolder + "/Trainers"
     self.eFolder = self.outFolder + "/Energies"
@@ -51,28 +52,24 @@ class BatchRenderer(BatchReader):
       record = self.getEParameters(nodeList.item(i))
       self.renderSingleCard(record, RenderECard, self.eFolder)
   
-  def renderSingleCard(self, record, renderKlass, dir):
-    (id, occurrence, format, parameters) = record
-    logger.info("Launching rendering of : " + id + " / " + `self.getCardName(id)`)
-    name = self.getCardFileName(id, dir)
+  def renderSingleCard(self, record, renderKlass, dirpath):
+    (xmlid, occurrence, format, parameters) = record
+    logger.info("Launching rendering of id : %s", xmlid)
     
     renderer = renderKlass(*parameters)
     image = renderer.render()
-    renderer.finalAction(image)
     
-    self.saveImage(image, name, occurrence, format)
+    if isinstance(renderer, RenderPkCard):
+      filepath = os.path.join(dirpath, renderer.cardName(xmlid))
+    else:
+      filepath = os.path.join(dirpath, renderer.cardName())
+    self.saveImage(image, filepath, occurrence, format)
     return None
-  
-  def getCardFileName(self, id, dir):
-    name = dir + "/" + self.getCardName(id)
-    alreadyThere = glob.glob(name + "*")
-    if alreadyThere: name += `len(alreadyThere)` + "-"
-    return name
   
   def saveImage(self, image, name, occurrence, format):
     logger.info("Saving rendered card under : " + name + "." + format)
     for i in range(int(occurrence)):
-      ImageIO.saveImage(image, format, name + "-" + `i`)
+      ImageIO.saveImage(image, format, "%s-%d" % (name, i))
     return None
   
   def finalAction(self, image=None):

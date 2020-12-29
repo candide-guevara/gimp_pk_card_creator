@@ -15,10 +15,19 @@ class RenderECard():
   def __init__(self, type):
     self.type = type
   
+  def cardName(self, extra_id=None):
+    if extra_id:
+      return "energy_%s%s" % (self.type, extra_id)
+    return 'energy_' + self.type
+
   def render(self):
     logger.debug("Rendering energy typed : %r", self.type)
     image = self.loadTemplate()
     self.paintBorder(image)
+
+    logger.info("Finished, clearing selection and cleaning image")
+    pdb.gimp_selection_none(image)
+    image.clean_all()
     return image
   
   def paintBorder(self, image):
@@ -58,8 +67,5 @@ class RenderECard():
     return template
   
   def finalAction(self, image):
-    logger.info("Finished, clearing selection and cleaning image")
-    pdb.gimp_selection_none(image)
-    image.clean_all()
-    ImageIO.displayImage(image)
+    ImageIO.displayImageOrSaveIfNonInteractive(image, self.cardName())
 

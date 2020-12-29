@@ -24,6 +24,11 @@ class RenderTrCard (object):
     self.description = description
     return
   
+  def cardName(self, extra_id=None):
+    if extra_id:
+      return "trainer_%s%s" % (self.name, extra_id)
+    return 'trainer_' + self.name
+
   def render(self):
     logger.info("Rendering trainer card with parameters : %r", vars(self))
     
@@ -34,11 +39,12 @@ class RenderTrCard (object):
     (TrainerTitle(cardImage, self.name)).render()
     (TrainerHeader(cardImage, self.name, self.hitPoints, self.name)).render()
     (TrainerText(cardImage, self.description, self.name)).render()
+
+    logger.info("Finished, clearing selection and cleaning image")
+    gimpfu.pdb.gimp_selection_none(cardImage)
+    cardImage.clean_all()
     return cardImage
   
   def finalAction(self, image):
-    logger.info("Finished, clearing selection and cleaning image")
-    gimpfu.pdb.gimp_selection_none(image)
-    image.clean_all()
-    ImageIO.displayImage(image)
+    ImageIO.displayImageOrSaveIfNonInteractive(image, self.cardName())
 

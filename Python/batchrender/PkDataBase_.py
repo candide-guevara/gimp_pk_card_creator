@@ -36,13 +36,6 @@ class PkDataBase (object):
       assert node or not dieIfNotFound, "Did not find id %r in db" % id
       return node
     
-    def getCardName(self, id):
-      name = None
-      node = self.getNodeById(id)
-      if node:
-        name = node.getAttribute('name')
-      return name  
-    
     def stringToType(self, typeName):
       '''
       @summary: String to action and element types

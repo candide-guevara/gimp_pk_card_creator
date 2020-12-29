@@ -35,7 +35,8 @@ def findPluginDir():
 
 class Cst:
   PRJ_DIR = findPluginDir()
-  LOG_FILE = os.path.join(os.environ.get('TEMP', '.'), 'poke_plugins.log')
+  LOG_FILE = os.path.realpath('./poke_plugins.log')
+  OUTPUT_DIR = os.path.realpath('.')
   
   PK_IMG_DIR = PRJ_DIR + "/SourceImages/Pokemons"
   TR_IMG_DIR = PRJ_DIR + "/SourceImages/Trainers"
@@ -45,14 +46,22 @@ class Cst:
   DB_XML_FILE = PRJ_DIR + "/Batches/PkCardsClassicSet.xml"
   
   PLUGIN_FOLDER = "<Toolbox>/PkRender"
+  DEFAULT_IMG_FORMAT = 'png'
 
 ### END Cst  
 
-def buildBatchJobPath(path, name):
-  fullPath = os.path.realpath(path + '/' + name)
+def mkdirAtPath(path, name):
+  assert os.path.isdir(path)
+  fullPath = os.path.realpath(os.path.join(path, name))
   if not os.path.isdir(fullPath):
     os.mkdir(fullPath)
   return fullPath  
+
+name_rx = re.compile('[^\w]+')
+def sanitizeFileName(filename):
+  dirname, leafname = os.path.split(filename)
+  leafname = name_rx.sub('_', leafname).lower() 
+  return os.path.join(dirname, leafname)
 
 def findImageFile(dirname, name):
   if os.path.isfile(name):

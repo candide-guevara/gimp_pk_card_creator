@@ -79,6 +79,11 @@ class RenderPkCard():
     self.footer = FooterParameterContainer(weakness, resistance, retreat, pkDescription)
     return
   
+  def cardName(self, extra_id=None):
+    if extra_id:
+      return "pokemon_%s%s" % (self.header.name, extra_id)
+    return 'pokemon_' + self.header.name
+
   def render(self):
     logger.info("Launching rendering of pokemon card with parameters: %r", vars(self))
     
@@ -92,8 +97,11 @@ class RenderPkCard():
     action2 = self.createAction(cardImage, 2, self.actions[1])
     
     assembler = Assembler(cardImage, header, footer, backg, action1, action2)
-    
     assembler.assemble()    
+
+    logger.info("Finished, clearing selection and cleaning image")
+    pdb.gimp_selection_none(cardImage)
+    cardImage.clean_all()
     return cardImage
   
   def createAction(self, cardImage, number, action):
@@ -105,8 +113,5 @@ class RenderPkCard():
     return None
   
   def finalAction(self, image):
-    logger.info("Finished, clearing selection and cleaning image")
-    pdb.gimp_selection_none(image)
-    image.clean_all()
-    ImageIO.displayImage(image)
+    ImageIO.displayImageOrSaveIfNonInteractive(image, self.cardName())
   

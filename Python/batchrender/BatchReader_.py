@@ -33,17 +33,13 @@ class BatchReader(PkDataBase):
       self.resize += [int(re.sub('(\d+)\*\d+', '\\1', self.batchRoot.getAttribute('resize')))]
       self.resize += [int(re.sub('\d+\*(\d+)', '\\1', self.batchRoot.getAttribute('resize')))]
     
-  def getBatchOutDir(self):
-    assert self.batchRoot.getAttribute('outfolder'), "Malformed batch xml at %s" % self.batchFile
-    return self.batchRoot.getAttribute('outfolder')  
-
   def getBatchAttr(self, node):
     '''
     @summary: Returns : (id, occurrence, format, image)
     '''
     id = node.getAttribute("id")
     occurrence = node.getAttribute("occurrence") or "1"
-    format = node.getAttribute("format") or "png"
+    format = node.getAttribute("format") or Cst.DEFAULT_IMG_FORMAT
     image = node.getAttribute("image")
     return (id, occurrence, format, image)
   
