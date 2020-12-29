@@ -13,28 +13,40 @@ The project ships with 4 different plugins.
 
 * Gimp : If your distribution has an **gimp-extra** package you need that too
 * [Gimpfu][2] : The python scripting interface for Gimp
+* OPTIONAL [Vagrant][3] : to run in a sandboxed environment
+
 
 ## Getting started
 
-* Run **Etc/install\_plugin.sh -h**, to either install the plugin or run a small test suite.
-* Launch Gimp, the plugins should be available under \<menu bar\>/PkRender
-* You can also run then in batch mode :   
-  gimp -b (python-fu-\<plugin name\> RUN-NONINTERACTIVE \<other args\>)
-* In case of errors, check the **logs** at ~/.gimp-\<version\>/plug-ins/poke\_plugins.log  
+### Running gimp on your machine
+
+> WARNING: Currently broken because gimp can only use python2. Many distributions ship gimp without python-fu to avoid depending on python2.
+
+* Run `Etc/install_plugin.sh` to install the plugin on your user gimp home folder.
+  * `Etc/test_plugin.sh` can be run to check the installation.
+* Launch Gimp, the plugins should be available under `<menu bar>/PkRender`
+* You can also run then in batch mode : `Etc/render.sh`
+* In case of errors, check the logs at `./poke_plugins.log`
+
+### Running gimp on a vagrant VM
+
+* Run `Vagrant/proxy_vagrant.sh up` to download, provision and start the VM.
+
 
 ## Directory structure
 
-* Batches/ : contains an example of batch xml input. It also contains **PkCardsClassicSet.xml**.
-  This file contains all the metadata needed to render cards in batch mode.
-* Etc/ : contains the install script and a some card demos
-* Etc/LegacySchemeRenderer/ : **deprecated** version of the plugin written in Scheme (I could
-  not cope with the weird syntax)
-* Python/ : the python-fu code for the plugins (sorry for the awkward file naming convention)
-* SourceImages/ : The base images used to compose the final card
+* `Batches/` : contains an example of batch xml input. It also contains `PkCardsClassicSet.xml`. This file contains all the metadata needed to render cards in batch mode.
+* `Etc/` : contains the helper scripts and a some card demos
+  * `Etc/LegacySchemeRenderer/` : _deprecated_ version of the plugin written in Scheme (I could not cope with the weird syntax)
+* `Python/` : the python-fu code for the plugins (sorry for the awkward file naming convention)
+* `SourceImages/` : The base images used to compose the final card
+* `Vagrant/` : Configuration and homedir for the VM
 
 ## Demo
+
 ![card demo](Etc/EyeCandyDemo/mr_rufo.png)
 
 [1]: http://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game#Gameplay
 [2]: http://www.gimp.org/docs/python/index.html
+[3]: https://www.vagrantup.com/
 
