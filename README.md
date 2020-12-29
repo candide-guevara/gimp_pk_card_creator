@@ -30,7 +30,8 @@ The project ships with 4 different plugins.
 
 ### Running gimp on a vagrant VM
 
-* Run `Vagrant/proxy_vagrant.sh up` to download, provision and start the VM.
+* Run `cd Vagrant ; VAGRANT_HOME=vagrant.d vagrant up` to download, provision and start the VM.
+  * `vagrant halt` or `vagrant destroy` to stop or clean the VM.
 
 
 ## Directory structure

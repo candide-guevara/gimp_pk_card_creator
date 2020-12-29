@@ -8,10 +8,16 @@ etc_sync_dir = root_sync_dir.join("Etc")
 local_install_sh = etc_sync_dir.join("install_plugin.sh")
 local_test_sh = etc_sync_dir.join("test_plugin.sh")
 
+unless ENV.key?("VAGRANT_HOME") then
+  # Does not work : ENV["VAGRANT_HOME"] = Pathname.new('.').realpath.to_s
+  raise "Call with VAGRANT_HOME=vagrant.d (do not like all the box data on my home folder)"
+end
 unless ENV.key?("REPO_ROOT") then
+  ENV["REPO_ROOT"] = `git rev-parse --show-toplevel`.strip
+end
+src_sync_dir = Pathname.new(ENV["REPO_ROOT"])
+unless src_sync_dir.directory? then
   raise "Expected REPO_ROOT in env vars : #{ENV.to_h}"
-else
-  src_sync_dir = Pathname.new(ENV["REPO_ROOT"])
 end
 
 # https://docs.vagrantup.com.
